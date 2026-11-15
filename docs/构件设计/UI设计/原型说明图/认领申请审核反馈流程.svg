@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900">
+  <defs>
+    <style>
+      .title { font: 700 28px "Microsoft YaHei", sans-serif; fill: #17233d; }
+      .subtitle { font: 400 14px "Microsoft YaHei", sans-serif; fill: #667085; }
+      .step { font: 700 14px "Microsoft YaHei", sans-serif; fill: #17233d; }
+      .small { font: 400 11px "Microsoft YaHei", sans-serif; fill: #667085; }
+      .branch { font: 700 12px "Microsoft YaHei", sans-serif; fill: #17233d; }
+      .edge { stroke: #8ea3c2; stroke-width: 2; fill: none; }
+      .edge-dash { stroke: #b9c3d2; stroke-width: 1.7; fill: none; stroke-dasharray: 6 6; }
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8ea3c2"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="900" fill="#f5f7fb"/>
+  <rect x="34" y="28" width="1432" height="844" rx="22" fill="#ffffff" stroke="#dfe6f0"/>
+  <text x="70" y="78" class="title">认领申请提交与审核反馈流程</text>
+  <text x="70" y="106" class="subtitle">申请通过只授予本人门户管理权；审核决定、门户 owner 与审计日志一致保存，通知失败可重试。</text>
+
+  <g>
+    <rect x="70" y="168" width="238" height="112" rx="15" fill="#edf3ff" stroke="#b9cdf5"/>
+    <text x="101" y="205" class="step">1 选择目标门户</text>
+    <text x="101" y="231" class="small">展示学者姓名、机构、领域与现有状态</text>
+    <text x="101" y="251" class="small">账号身份来自登录会话</text>
+  </g>
+  <g>
+    <rect x="352" y="168" width="238" height="112" rx="15" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="383" y="205" class="step">2 填写证明材料</text>
+    <text x="383" y="231" class="small">ORCID、主页、代表性成果、说明</text>
+    <text x="383" y="251" class="small">可保存草稿；至少一项身份证据</text>
+  </g>
+  <g>
+    <rect x="634" y="168" width="238" height="112" rx="15" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="665" y="205" class="step">3 确认并提交</text>
+    <text x="665" y="231" class="small">复核目标门户与材料版本</text>
+    <text x="665" y="251" class="small">生成申请编号，展示审核路径</text>
+  </g>
+  <g>
+    <rect x="916" y="168" width="238" height="112" rx="15" fill="#fff8e7" stroke="#efd8a7"/>
+    <text x="947" y="205" class="step">已提交 → 验证中</text>
+    <text x="947" y="231" class="small">系统校验会话、材料完整性</text>
+    <text x="947" y="251" class="small">重复申请与门户归属冲突检查</text>
+  </g>
+  <g>
+    <rect x="1198" y="168" width="238" height="112" rx="15" fill="#f3efff" stroke="#d8c9f5"/>
+    <text x="1229" y="205" class="step">审核中</text>
+    <text x="1229" y="231" class="small">管理员核对身份、材料与成果证据</text>
+    <text x="1229" y="251" class="small">提交前再次校验 expected_version</text>
+  </g>
+  <path d="M308 224 L352 224" class="edge" marker-end="url(#arrow)"/>
+  <path d="M590 224 L634 224" class="edge" marker-end="url(#arrow)"/>
+  <path d="M872 224 L916 224" class="edge" marker-end="url(#arrow)"/>
+  <path d="M1154 224 L1198 224" class="edge" marker-end="url(#arrow)"/>
+
+  <path d="M1317 280 L1317 356" class="edge" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="1198" y="356" width="238" height="80" rx="13" fill="#e8f7f0" stroke="#bfe2d4"/>
+    <text x="1235" y="386" class="step">通过</text>
+    <text x="1235" y="410" class="small">状态 + owner + 审计同一提交边界</text>
+  </g>
+  <path d="M1412 396 L1466 396 L1466 560" class="edge-dash" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="1340" y="560" width="126" height="70" rx="12" fill="#edf3ff" stroke="#b9cdf5"/>
+    <text x="1364" y="589" class="step">申请人可见</text>
+    <text x="1366" y="611" class="small">已通过反馈</text>
+  </g>
+
+  <path d="M1198 396 L1136 396" class="edge" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="916" y="356" width="220" height="80" rx="13" fill="#feefed" stroke="#efc5c0"/>
+    <text x="953" y="386" class="step">驳回并填写原因</text>
+    <text x="953" y="410" class="small">申请人可补充后重新提交</text>
+  </g>
+  <path d="M916 356 L916 324 L502 324 L502 280" class="edge-dash" marker-end="url(#arrow)"/>
+  <text x="654" y="318" class="small">补充材料后重新提交并校验</text>
+
+  <g>
+    <rect x="70" y="356" width="760" height="244" rx="16" fill="#fbfcfe" stroke="#dfe6f0"/>
+    <text x="100" y="392" class="title" style="font-size:19px">页面反馈与异常处理</text>
+    <g transform="translate(100 424)">
+      <rect x="0" y="0" width="224" height="142" rx="12" fill="#ffffff" stroke="#dfe6f0"/>
+      <text x="20" y="31" class="branch">材料缺失</text>
+      <text x="20" y="57" class="small">保留草稿，定位到缺失字段。</text>
+      <text x="20" y="78" class="small">不生成成功通知，不授予权限。</text>
+      <text x="20" y="108" class="small">重新填写后回到提交与验证。</text>
+    </g>
+    <g transform="translate(344 424)">
+      <rect x="0" y="0" width="224" height="142" rx="12" fill="#ffffff" stroke="#dfe6f0"/>
+      <text x="20" y="31" class="branch">重复申请 / 已认领</text>
+      <text x="20" y="57" class="small">未完成申请提供进度入口。</text>
+      <text x="20" y="78" class="small">已有 owner 引导至申诉。</text>
+      <text x="20" y="108" class="small">不覆盖原申请或原管理者。</text>
+    </g>
+    <g transform="translate(588 424)">
+      <rect x="0" y="0" width="220" height="142" rx="12" fill="#ffffff" stroke="#dfe6f0"/>
+      <text x="20" y="31" class="branch">并发 / 通知失败</text>
+      <text x="20" y="57" class="small">版本冲突提示刷新与重新读取。</text>
+      <text x="20" y="78" class="small">通知失败有限重试。</text>
+      <text x="20" y="108" class="small">业务决定不回滚，状态可查询。</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="70" y="640" width="1366" height="178" rx="16" fill="#fbfcfe" stroke="#dfe6f0"/>
+    <text x="100" y="676" class="title" style="font-size:19px">申请七态与用户可见信息</text>
+    <g transform="translate(100 704)">
+      <rect x="0" y="0" width="132" height="54" rx="27" fill="#f7f8fa" stroke="#d9dee6"/>
+      <text x="49" y="33" class="step">草稿</text>
+      <path d="M132 27 L174 27" class="edge" marker-end="url(#arrow)"/>
+      <rect x="174" y="0" width="132" height="54" rx="27" fill="#fff8e7" stroke="#efd8a7"/>
+      <text x="223" y="33" class="step">已提交</text>
+      <path d="M306 27 L348 27" class="edge" marker-end="url(#arrow)"/>
+      <rect x="348" y="0" width="132" height="54" rx="27" fill="#eaf2ff" stroke="#c3d6f6"/>
+      <text x="397" y="33" class="step">验证中</text>
+      <path d="M480 27 L522 27" class="edge" marker-end="url(#arrow)"/>
+      <rect x="522" y="0" width="132" height="54" rx="27" fill="#f3efff" stroke="#d8c9f5"/>
+      <text x="571" y="33" class="step">审核中</text>
+      <path d="M654 27 L696 27" class="edge" marker-end="url(#arrow)"/>
+      <rect x="696" y="0" width="132" height="54" rx="27" fill="#e8f7f0" stroke="#bfe2d4"/>
+      <text x="745" y="33" class="step">已通过</text>
+      <path d="M654 54 L654 88 L696 88" class="edge" marker-end="url(#arrow)"/>
+      <rect x="696" y="61" width="132" height="54" rx="27" fill="#feefed" stroke="#efc5c0"/>
+      <text x="745" y="94" class="step">已驳回</text>
+      <path d="M828 88 L870 88" class="edge" marker-end="url(#arrow)"/>
+      <rect x="870" y="61" width="132" height="54" rx="27" fill="#f7f8fa" stroke="#d9dee6"/>
+      <text x="900" y="94" class="step">补充后重提</text>
+    </g>
+    <text x="1130" y="731" class="small">已通过、已撤回为终态。</text>
+    <text x="1130" y="753" class="small">通知载荷最小化为申请编号与状态。</text>
+    <text x="1130" y="775" class="small">证明材料需鉴权后读取。</text>
+  </g>
+</svg>

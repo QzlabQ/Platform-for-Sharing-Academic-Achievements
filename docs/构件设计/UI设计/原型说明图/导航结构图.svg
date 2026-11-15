@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="840" viewBox="0 0 1440 840">
+  <defs>
+    <style>
+      .title { font: 700 28px "Microsoft YaHei", sans-serif; fill: #17233d; }
+      .subtitle { font: 400 14px "Microsoft YaHei", sans-serif; fill: #667085; }
+      .role { font: 700 15px "Microsoft YaHei", sans-serif; fill: #17233d; }
+      .node-title { font: 700 16px "Microsoft YaHei", sans-serif; fill: #17233d; }
+      .node-sub { font: 400 12px "Microsoft YaHei", sans-serif; fill: #667085; }
+      .group { font: 700 13px "Microsoft YaHei", sans-serif; fill: #2358d8; letter-spacing: 1px; }
+      .edge { stroke: #9fb2cc; stroke-width: 1.7; fill: none; }
+      .edge-accent { stroke: #2358d8; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#8ea3c2"/>
+    </marker>
+  </defs>
+  <rect width="1440" height="840" fill="#f5f7fb"/>
+  <rect x="34" y="28" width="1372" height="784" rx="22" fill="#ffffff" stroke="#dfe6f0"/>
+  <text x="70" y="78" class="title">ScholarFlow 页面导航结构</text>
+  <text x="70" y="106" class="subtitle">公开门户与管理后台采用两套导航外壳，通过登录态、角色权限与返回入口连接。</text>
+
+  <g>
+    <rect x="70" y="146" width="166" height="62" rx="12" fill="#edf3ff" stroke="#cbdaf7"/>
+    <text x="109" y="174" class="role">访客</text>
+    <text x="93" y="194" class="node-sub">无需登录</text>
+    <rect x="70" y="232" width="166" height="62" rx="12" fill="#edf3ff" stroke="#cbdaf7"/>
+    <text x="109" y="260" class="role">科研人员</text>
+    <text x="93" y="280" class="node-sub">登录后认领/管理</text>
+    <rect x="70" y="318" width="166" height="62" rx="12" fill="#edf3ff" stroke="#cbdaf7"/>
+    <text x="109" y="346" class="role">管理员</text>
+    <text x="93" y="366" class="node-sub">采集/审核/治理</text>
+  </g>
+
+  <g>
+    <text x="300" y="148" class="group">公开门户 · 顶部导航</text>
+    <rect x="300" y="166" width="700" height="318" rx="18" fill="#fbfcfe" stroke="#dfe6f0"/>
+    <rect x="338" y="206" width="188" height="76" rx="13" fill="#2358d8"/>
+    <text x="387" y="238" class="node-title" fill="#ffffff">成果检索</text>
+    <text x="368" y="260" class="node-sub" fill="#dce7ff">关键词 + 分面筛选</text>
+    <rect x="596" y="206" width="168" height="76" rx="13" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="649" y="238" class="node-title">学者门户</text>
+    <text x="630" y="260" class="node-sub">档案与成果分组</text>
+    <rect x="834" y="206" width="128" height="76" rx="13" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="869" y="238" class="node-title">成果详情</text>
+    <text x="860" y="260" class="node-sub">来源与证据</text>
+
+    <rect x="430" y="350" width="178" height="68" rx="12" fill="#e9f7f6" stroke="#b9dfdc"/>
+    <text x="480" y="380" class="node-title">认领申请</text>
+    <text x="458" y="401" class="node-sub">三步提交 · 状态查询</text>
+    <rect x="706" y="350" width="166" height="68" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="755" y="380" class="node-title">纠错与申诉</text>
+    <text x="754" y="401" class="node-sub">入口按对象上下文</text>
+
+    <path d="M526 282 L526 350" class="edge" marker-end="url(#arrow)"/>
+    <path d="M680 282 L680 350" class="edge" marker-end="url(#arrow)"/>
+    <path d="M898 282 L789 350" class="edge" marker-end="url(#arrow)"/>
+  </g>
+
+  <g>
+    <text x="1062" y="148" class="group">管理后台 · 侧边导航</text>
+    <rect x="1062" y="166" width="306" height="318" rx="18" fill="#15233d"/>
+    <rect x="1088" y="196" width="254" height="55" rx="10" fill="#2958cb"/>
+    <text x="1121" y="229" class="node-title" fill="#ffffff">采集任务管理</text>
+    <rect x="1088" y="263" width="254" height="55" rx="10" fill="#20314f"/>
+    <text x="1121" y="296" class="node-title" fill="#ffffff">认领审核</text>
+    <rect x="1088" y="330" width="254" height="55" rx="10" fill="#20314f"/>
+    <text x="1121" y="363" class="node-title" fill="#ffffff">纠错处理</text>
+    <rect x="1088" y="397" width="254" height="55" rx="10" fill="#20314f"/>
+    <text x="1121" y="430" class="node-title" fill="#ffffff">数据治理 · 审计日志</text>
+  </g>
+
+  <g>
+    <rect x="300" y="548" width="1068" height="196" rx="18" fill="#ffffff" stroke="#dfe6f0"/>
+    <text x="330" y="584" class="group">导航约束</text>
+    <g transform="translate(330 614)">
+      <circle cx="13" cy="13" r="13" fill="#edf3ff"/>
+      <text x="9" y="18" class="node-sub" fill="#2358d8">1</text>
+      <text x="38" y="18" class="node-title">公开页保持可退回到检索</text>
+      <text x="38" y="40" class="node-sub">面包屑始终展示“成果检索 / 当前对象”，浏览器返回保留筛选状态。</text>
+    </g>
+    <g transform="translate(330 678)">
+      <circle cx="13" cy="13" r="13" fill="#e9f7f6"/>
+      <text x="9" y="18" class="node-sub" fill="#0f8184">2</text>
+      <text x="38" y="18" class="node-title">认领是门户管理权申请</text>
+      <text x="38" y="40" class="node-sub">入口可来自学者门户或成果详情；进入后始终显示目标门户、申请账号和审核路径。</text>
+    </g>
+    <g transform="translate(754 614)">
+      <circle cx="13" cy="13" r="13" fill="#fff4e5"/>
+      <text x="9" y="18" class="node-sub" fill="#a84e0b">3</text>
+      <text x="38" y="18" class="node-title">管理端与前台可双向切换</text>
+      <text x="38" y="40" class="node-sub">示例流程允许从认领结果显示页进入管理员审核，便于演示完整闭环。</text>
+    </g>
+    <g transform="translate(754 678)">
+      <circle cx="13" cy="13" r="13" fill="#feefed"/>
+      <text x="9" y="18" class="node-sub" fill="#b42318">4</text>
+      <text x="38" y="18" class="node-title">敏感结果依赖鉴权</text>
+      <text x="38" y="40" class="node-sub">证明材料、审核动作和任务控制只在管理后台显示。</text>
+    </g>
+  </g>
+
+  <path d="M236 177 C270 177 278 214 300 224" class="edge" marker-end="url(#arrow)"/>
+  <path d="M236 263 C268 263 272 263 300 263" class="edge" marker-end="url(#arrow)"/>
+  <path d="M236 349 C1010 349 1010 224 1062 224" class="edge-accent" marker-end="url(#arrow)"/>
+</svg>

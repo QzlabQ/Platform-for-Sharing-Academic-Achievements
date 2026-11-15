@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2358d8">
+  <title>ScholarFlow · 学术成果分享平台 UI 原型</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div id="app" aria-live="polite"></div>
+  <div id="overlay-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="assertive"></div>
+
+  <button class="demo-launcher" id="demo-launcher" type="button" aria-controls="demo-panel" aria-expanded="false">
+    <span class="demo-launcher-dot"></span>
+    原型页面
+  </button>
+  <aside class="demo-panel" id="demo-panel" aria-label="原型页面导航">
+    <div class="demo-panel-head">
+      <div>
+        <strong>ScholarFlow</strong>
+        <span>UI 原型导航</span>
+      </div>
+      <button class="icon-button" id="demo-close" type="button" aria-label="关闭原型导航">×</button>
+    </div>
+    <p class="demo-hint">点击页面或下方场景，可直接演示跨页面流程。</p>
+    <div class="demo-grid">
+      <a href="#search" data-demo-route="search"><b>01</b><span>成果检索页</span><small>筛选、排序、分页</small></a>
+      <a href="#scholar" data-demo-route="scholar"><b>02</b><span>学者门户页</span><small>档案、成果分组</small></a>
+      <a href="#detail" data-demo-route="detail"><b>03</b><span>成果详情页</span><small>来源与证据</small></a>
+      <a href="#claim" data-demo-route="claim"><b>04</b><span>认领申请页</span><small>三步提交与反馈</small></a>
+      <a href="#admin-tasks" data-demo-route="admin-tasks"><b>05</b><span>采集任务管理</span><small>创建、停止、重试</small></a>
+      <a href="#admin-claims" data-demo-route="admin-claims"><b>06</b><span>认领审核</span><small>通过、驳回与理由</small></a>
+    </div>
+    <div class="demo-scenarios">
+      <div class="demo-section-label">关键场景</div>
+      <button type="button" data-scenario="search-flow">检索过滤与分页 <span>→</span></button>
+      <button type="button" data-scenario="claim-flow">认领提交与审核反馈 <span>→</span></button>
+      <button type="button" data-reset-prototype>重置原型状态 <span>↺</span></button>
+    </div>
+  </aside>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
