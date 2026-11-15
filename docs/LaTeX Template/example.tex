@@ -1,0 +1,51 @@
+\documentclass{scholarflow-report}
+
+\ReportSetup{
+  project=ScholarFlow,
+  title=软件架构调研分析报告,
+  cover-title={软件架构\\调研分析报告},
+  subtitle=学术成果分享平台
+}
+
+\begin{document}
+\MakeReportCover
+
+ScholarFlow 需要同时处理访客的在线查询和来自外部站点的批量数据。在线应用负责搜索、认领与审核，后台进程则可以根据来源允许的访问频率分批采集，并在重启后从已经保存的位置继续。
+
+\begin{ReportContext}
+上午刚有一批论文导入，访客也正在按年份筛选结果。如果查询和采集共用一个进程，采集阶段的资源占用可能延长响应时间。分别运行可以为两项工作设定不同的资源限制，共享数据库的负载仍需一起观察。
+\end{ReportContext}
+
+\ReportSection{运行方式}
+\subsection{在线请求与后台任务}
+在线应用在同一次提交中保存审核决定和索引待办，随后就可以向管理员返回结果。后台读取已保存的任务，再按记录版本更新索引。图 \ref{fig:handoff} 展示了交接过程。
+
+\begin{ReportFigure}
+  % 也可以改用 \includegraphics[width=.9\linewidth]{figure.pdf}。
+  \begin{tikzpicture}[
+    nodebox/.style={draw=sectionrule,fill=tableblue!55,rounded corners=2pt,
+      text width=36mm,minimum height=10mm,align=center},
+    >={Stealth[length=2mm]}
+  ]
+    \node[nodebox] (app) at (0,0) {在线应用};
+    \node[nodebox] (db) at (5,0) {正式数据库\\保存待办};
+    \node[nodebox,fill=reportmint] (worker) at (10,0) {后台进程};
+    \draw[->,semithick,reportblue] (app.east) -- (db.west);
+    \draw[->,semithick,reportteal] (db.east) -- (worker.west);
+  \end{tikzpicture}
+  \caption{在线应用与后台进程的任务交接}
+  \label{fig:handoff}
+  \ReportFigureNote{箭头表示任务交接顺序。}
+\end{ReportFigure}
+
+\ReportSection{故障与恢复}
+\begin{ReportIncident}
+如果数据库已提交而索引更新失败，后台保留待办，以便下次按记录版本重试。访客查询时仍以数据库中的当前公开状态为准。
+\end{ReportIncident}
+
+\ReportSection{一期选择}
+\begin{ReportDecision}
+一期采用分层在线应用和独立后台进程。这样可以分别安排查询与采集的运行资源，同时让审核决定、授权和操作记录保持在同一次数据库提交中。
+\end{ReportDecision}
+
+\end{document}
